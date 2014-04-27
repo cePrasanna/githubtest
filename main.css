@@ -48,3 +48,4 @@ table tr:hover{ background-color: #deff89; cursor: pointer; }
 	width: 100%;
 }
 .grid-row div { background-color: #dd0; width: 25%; display: inline-block; padding: 5px;}
+.grid-row div:hover {background-color: #00dd00;}
