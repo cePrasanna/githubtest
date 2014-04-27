@@ -1,6 +1,8 @@
 body { background-color: #efefef; margin: 0 auto; max-width: 850px;}
 .container { margin:0 auto; max-width:850px; }
-
+input { padding-left: 5px;}
+button { padding: 5px 25px;  border-right: 5px; }
+.primary { color:#fff; background-color: #0000ed; }
 input.search { padding: 5px; width: 30%; border-radius: 5px; border:1px solid;}
 
 ul { list-style: none;}
@@ -53,3 +55,11 @@ table tr:hover{ background-color: #deff89; cursor: pointer; }
 .grid-row div { background-color: #8a4; width: 31%; display: inline-block; padding: 5px;}
 .grid-row div:hover {background-color: #00dd00;}
 .grid-row div:nth-child(3) {text-align: right;;};
+
+.form-input {
+
+}
+
+.cust-form-input { margin-top: 20px;}
+.cust-form-input span { position: absolute; margin-top: 4px; }
+.cust-form-input input { margin-left: 100px; width: 25%; }

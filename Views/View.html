@@ -1,0 +1,12 @@
+<div>
+	<div class="grid-header">
+		<div ng-click="sortField='name'">Name</div>
+		<div ng-click="sortField='city'">City</div>
+		<div ng-click="sortField='salary'">Salary</div>
+	</div>
+	<div class="grid-row" ng-repeat="cust in customers | filter: name | orderBy:sortField" >
+		<div>{{cust.name}}</div>
+		<div>{{cust.city}}</div>
+		<div>{{cust.salary | currency }}</div>
+	</div>
+</div>
