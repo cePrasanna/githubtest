@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Angular Example</title>
+		
+		<script src="angular.min.js"></script>
+	</head>
+	<body>
+		
+		<div ng-app="formApp" ng-controller="formCtrl">
+			<form name="form1" novalidate >		
+		First Name: <input ng-model="person.firstName" type="text" />
+			<br>
+			Last Name: <input ng-model="person.lastName" type="text" />
+			<br/>
+			Email: <input type="email" ng-model="person.email" />
+			<br/>
+			<input type="radio" value="Male" name="sex" ng-model = "person.sex" />Male
+			<input type="radio" value="Female" name="sex" ng-model = "person.sex" />Female
+			<br/>
+			Select Book :<select  ng-model="person.book">
+				<option value="1">asp.net</option>
+				<option value="2">csharp</option>
+				<option value="3">asp.net mvc5</option>
+			</select><br/>
+			{{ person.firstName }}<br/>
+			{{ person.sex }}
+			{{ person.book }}
+			<br/>
+			<div style="margin-top:20px;">
+				<button type="button" data-ng-click="submitForm()">Save</button>
+				<button type="button" data-ng-click="formReset()">Reset</button>
+			</div>
+	
+		</form>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	var app = angular.module('formApp', []);
+	
+	app.controller("formCtrl", function($scope) {
+		$scope.submitForm = function() {
+			console.log($scope.person.firstName);
+			console.log($scope.person.lastName);
+			var isvalid = $scope.form1.$valid;
+			console.log(isvalid);
+			addPerson($scope.person);
+		};
+		
+		$scope.formReset = function() {
+		
+			$scope.person = {};
+		};
+		
+		var addPerson = function(person) {
+			console.log("Add:" + $scope.person.firstName);
+		}
+		
+	});
+	
+</script>

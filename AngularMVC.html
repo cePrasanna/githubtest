@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Angular MVC Sample</title>
+		<link rel="stylesheet"  href="main.css" />
+	</head>
+	<body>
+		<div data-ng-app="" data-ng-controller="customerCtrl">
+			<h3>Customers</h3>
+			Search: <input type="text" name="cname" ng-model="name" />
+			<ul>
+				<li ng-repeat="cust in customers | filter: name | orderBy:'city'" >
+					{{ cust.name | uppercase }} - {{ cust.city }} - {{ cust.salary | currency }}
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="angular.min.js"></script>
+	</body>
+</html>
+
+<script type="text/javascript">
+	function customerCtrl($scope) {
+		$scope.customers = [
+			{ name: 'Prasanna', city:'Bangalore', salary:95000},
+			{ name: 'Raju', city: 'Chikmangalur', salary:88200},
+			{ name: 'Tejaswini', city: 'Shimoga', salary:99850},
+			{ name:'Krishna', 	city: 'Bangalore', salary: 9999999}
+			];
+	}
+</script>
