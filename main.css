@@ -1,6 +1,8 @@
 body { background-color: #efefef; margin: 0 auto; max-width: 850px;}
 .container { margin:0 auto; max-width:850px; }
 
+input.search { padding: 5px; width: 30%; border-radius: 5px; border:1px solid;}
+
 ul { list-style: none;}
 ul li { padding: 5px 0 5px; }
 
@@ -28,12 +30,13 @@ table tr:hover{ background-color: #deff89; cursor: pointer; }
 }
 
 .grid-header {
-	background-color: #0dc;
+	background-color: #244;
 	margin: 2px;
+	color:white;
 }
 .grid-header div {
 	display: inline-block;
-	width: 25%;
+	width: 31%;
 	padding: 6px;
 	cursor: pointer;
 	border-right: 2px solid gray;
@@ -47,5 +50,6 @@ table tr:hover{ background-color: #deff89; cursor: pointer; }
 	cursor: pointer;
 	width: 100%;
 }
-.grid-row div { background-color: #dd0; width: 25%; display: inline-block; padding: 5px;}
+.grid-row div { background-color: #8a4; width: 31%; display: inline-block; padding: 5px;}
 .grid-row div:hover {background-color: #00dd00;}
+.grid-row div:nth-child(3) {text-align: right;;};

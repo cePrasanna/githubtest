@@ -7,7 +7,7 @@
 	<body>
 		<div data-ng-app="custApp" data-ng-controller="customerCtrl">
 			<h3>Customers</h3>
-			Search: <input type="text" name="cname" ng-model="name" />
+			Search: <input type="search" name="cname" ng-model="name" class="search" />
 			<div class="grid-header">
 				<div ng-click="sortField='name'">Name</div>
 				<div ng-click="sortField='city'">City</div>
@@ -26,20 +26,24 @@
 
 <script type="text/javascript">
 	var app = angular.module('custApp', []);
-	function customerCtrl($scope) {
+
+	app.controller('customerCtrl', function($scope) {
 		$scope.customers = [
 			{ name: 'Prasanna', city:'Bangalore', salary:95000},
 			{ name: 'Raju', city: 'Chikmangalur', salary:88200},
 			{ name: 'Tejaswini', city: 'Shimoga', salary:99850},
-			{ name:'Krishna', 	city: 'Bangalore', salary: 9999999}
+			{ name:'Krishna', 	city: 'Bangalore', salary: 9999999},
+			{ name:'Shashi', city: 'Bangalore', salary: 889999},
+			{ name:'Kumar S', city: 'Mysore', salary: 95680},
 			];
-	}
+	});
+
 
 	app.directive('enter', function(){
 		return function(scope, element){
 			var tooltipEle = $("<div></div>");
 			element.bind('mouseenter', function(){
-				var tooltipValue = scope.cust.name +" is leaving in the city, " + scope.cust.city + ". And getting salary "+ scope.cust.salary;
+				var tooltipValue = scope.cust.name +" is living in the city " + scope.cust.city + ". And getting salary "+ scope.cust.salary;
 				tooltipEle.html(tooltipValue);
 				tooltipEle.css({ 'position':'absolute','background-color':'black',
 					'border':'1px solid green','width':'150px','border-radius':'5px','margin-top':'25px','margin-left':'-30px',
@@ -50,8 +54,6 @@
 			element.bind('mouseleave', function(){
 				tooltipEle.remove();
 			});
-
-			
 		}
 	})
 </script>
