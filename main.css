@@ -1,0 +1,50 @@
+body { background-color: #efefef; margin: 0 auto; max-width: 850px;}
+.container { margin:0 auto; max-width:850px; }
+
+ul { list-style: none;}
+ul li { padding: 5px 0 5px; }
+
+
+table { border-collapse:collapse;}
+
+table tr:nth-child(even) { 	background-color:#56AA50;}
+table tr:nth-child(odd) { 	background-color:#dddddd;}
+
+table  td { padding: 15px; }
+table tr td:nth-child(2) { width:150px; padding-left:40px; background:url(./Images/animated-overlay.gif) no-repeat center center;}
+
+table tr:hover{ background-color: #deff89; cursor: pointer; }
+
+.tooltip {
+	margin: 8px;
+	padding: 8px;
+	border: 1px solid red;
+	background-color: #000;
+	color:#fff;
+	max-width:210px;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 50000;
+}
+
+.grid-header {
+	background-color: #0dc;
+	margin: 2px;
+}
+.grid-header div {
+	display: inline-block;
+	width: 25%;
+	padding: 6px;
+	cursor: pointer;
+	border-right: 2px solid gray;
+	text-align: center;
+	font-weight: bold;
+}
+
+.grid-row {
+	border: 1px solid gray;
+	margin: 2px;
+	cursor: pointer;
+	width: 100%;
+}
+.grid-row div { background-color: #dd0; width: 25%; display: inline-block; padding: 5px;}
