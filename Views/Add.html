@@ -3,15 +3,15 @@
 	<span>City</span> <input type="text" ng-model= "newCustomer.city" /><br/>
 	<span>Salary</span> <input type="number" ng-model= "newCustomer.salary" /><br/>
 	<p>
-		<button tpe="button" ng-click="resetForm()">Reset</button>
-		<button tpe="button" ng-click="addNew()" class="primary">Add New</button>
+		<button type="button" ng-click="resetForm()">Reset</button>
+		<button type="button" ng-click="addNew()" class="primary">Add New</button>
 	</p>
 	<div class="grid-header">
-		<div ng-click="sortField='name'">Name</div>
-		<div ng-click="sortField='city'">City</div>
-		<div ng-click="sortField='salary'">Salary</div>
+		<div ng-click="sortField='name'; reverse=!reverse">Name</div>
+		<div ng-click="sortField='city'; reverse=!reverse">City</div>
+		<div ng-click="sortField='salary'; reverse=!reverse ">Salary</div>
 	</div>
-	<div class="grid-row" ng-repeat="cust in customers | filter: name | orderBy:sortField" >
+	<div class="grid-row" ng-repeat="cust in customers | filter: name | orderBy:sortField:reverse" >
 		<div>{{cust.name}}</div>
 		<div>{{cust.city}}</div>
 		<div>{{cust.salary | currency }}</div>

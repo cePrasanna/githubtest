@@ -33,6 +33,10 @@
 	});
 
 	appDemo.controller('customerCtrl', function($scope){
+		$scope.reverse = true;
+		$scope.sortField = 'name';
+		$scope.reverse= true;
+
 		$scope.customers = [
 			{ name: 'Prasanna', city:'Bangalore', salary:95000},
 			{ name: 'Raju', city: 'Chikmangalur', salary:88200},

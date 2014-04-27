@@ -1,8 +1,8 @@
 <div>
 	<div class="grid-header">
-		<div ng-click="sortField='name'">Name</div>
-		<div ng-click="sortField='city'">City</div>
-		<div ng-click="sortField='salary'">Salary</div>
+		<div ng-click="sortField='name'; reverse=!reverse">Name</div>
+		<div ng-click="sortField='city'; reverse=!reverse">City</div>
+		<div ng-click="sortField='salary'; reverse=!reverse ">Salary</div>
 	</div>
 	<div class="grid-row" ng-repeat="cust in customers | filter: name | orderBy:sortField" >
 		<div>{{cust.name}}</div>
