@@ -63,3 +63,13 @@ table tr:hover{ background-color: #deff89; cursor: pointer; }
 .cust-form-input { margin-top: 20px;}
 .cust-form-input span { position: absolute; margin-top: 4px; }
 .cust-form-input input { margin-left: 100px; width: 25%; }
+
+uncheckedClass {
+    background-color:#eeeeee;
+    color:black;
+}
+ 
+.checkedClass {
+    background-color:#3ab44a;
+    color:white;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<title>Angular</title>
+		<link rel="stylesheet"  href="main.css" />
+	</head>
+	<body>
+		<div ng-controller="promiseCtrl">
+			{{6+2}}
+			<h1>{{ model.message }}</h1>
+			<h1>{{ model.message1 }}</h1>
+			<button ng-click="submit()">Submit</button>
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+ 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+	</body>
+</html>
+<script>
+	var app= angular.module('app',[]);
+
+	app.controller('promiseCtrl', function($scope, $q){
+		$scope.submit = function(){
+			var defer = $q.defer();
+
+			defer.promise.then(function(){
+				setTimeout(function(){ 
+				
+				 },3000);
+					$scope.model.message = "hello";
+			}).
+			then(function(){
+				alert('alert 1');
+			}).
+			then(function(){
+				alert('alert 2');
+			});
+
+			defer.resolve();
+			$scope.model = { message1: 'This is my App'}
+		}
+
+		
+	});
+
+</script>

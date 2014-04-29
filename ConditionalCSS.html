@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="cssApp">
+	<head>
+		<title>Angular : ngRoute Sample</title>
+		<link rel="stylesheet"  href="main.css" />
+	</head>
+	<body>
+		<div ng-controller="conditionalCSSCtrl">
+			<div ng-repeat="friend in friends"  ng-class="{'checkedClass': friend.status, 'uncheckedClass':!friend.status}">
+				<input type="checkbox" ng-model="friend.status"> {{ friend.name }}
+			</div>
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+ 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+
+	</body>
+</html>
+
+<script>
+	var app = angular.module('cssApp',[]);
+	app.controller('conditionalCSSCtrl', function($scope){
+		$scope.friends = [
+			{ name:'Prasanna', status:'true'},
+			{ name:'Krishna', status:'false'},
+			{ name:'Raju', status:'true'}
+		];
+
+	});
+</script>
