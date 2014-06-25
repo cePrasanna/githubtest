@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Validations</title>
+		<link rel="stylesheet"  href="form.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+	</head>
+	<body ng-app="validationApp" ng-controller="mainController">
+		<form name="userForm" ng-submit="submitForm()" novalidate>
+			<div>
+				<span>Name</span><br/>
+				<input id="myName" type="text" name="name" ng-model="name" required />
+				<p class="error" ng-show="userForm.name.$invalid && !userForm.name.$pristine">Name is required!</p>
+			</div>
+			<div>
+				<span>Username</span><br/>
+				<input id="myusername" type="text" name="username" data-ng-model="username" ng-minlength="3" ng-maxlength="8">
+			</div>
+			<div>
+				<span>Email</span><br/>
+				<input type="email" name="email">
+			</div>
+			<div>
+				<span>Comment</span><br>
+				<input type="text" id="myComment" ng-model="comment">
+			</div>
+			<p>
+				<button type="submit" ng-disabled="userForm.$invalid">Submit</button>
+			</p>
+			<p><span ng-model="status" ng-bind="status"></span></p>
+		</form>
+	</body>
+	<script type="text/javascript">
+		var validationApp = angular.module('validationApp',[]);
+		validationApp.controller('mainController', function($scope){
+			$scope.submitForm = function(){
+				var valid = $scope.userForm.$valid ;
+				if (valid){
+					$scope.status = "User is Valid.";
+				}
+
+				var invalid = $scope.userForm.$invalid;
+				if (invalid){
+					$scope.status = "User is Invalid.";
+				}
+			};
+
+		});
+	</script>
+</html>

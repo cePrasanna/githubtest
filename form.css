@@ -1,0 +1,7 @@
+body { margin:0 auto; width: 850px; }
+form { margin-top: 20px;}
+input[type=text], input[type=email] { padding: 5px 10px; }
+button { padding: 5px 20px; color:#fff; background-color: #00dd88; border:1px solid 00ee88; border-radius: 10px;}
+button:disabled { background-color:#ddeedd; color:#89da00;}
+div { margin-top: 15px;}
+p.error { color:red;}
